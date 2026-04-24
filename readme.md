@@ -1,12 +1,15 @@
-## Possible datasets
+## Datasets
 ### REAL
 - The Elliptic Bitcoin Dataset (https://www.kaggle.com/datasets/ellipticco/elliptic-data-set)
 real-world dataset mapping Bitcoin transactions, where nodes are transactions and edges are the flow of Bitcoin. It includes labeled illicit transactions (e.g., ransomware, darknet markets). Because illicit actors actively try to obfuscate their trails using mixers and cyclic transfers, the graph contains the exact rich topological structures.
+
 ! This dataset is different from the others because it maps the transactions as nodes and edges as flow of Bitcoins.
+
 ! edges and nodes already defined
 
 - Ethereum Phishing Transaction Networks (https://www.kaggle.com/datasets/xblock/ethereum-phishing-transaction-network)
 accounts and transactions in Ethereum are treated as nodes and edges, thus detection of phishing accounts can be modeled as a node classification problem.
+
 ! edges and nodes already defined
 
 ### SYNTHETIC:
