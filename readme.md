@@ -19,8 +19,3 @@ everyday synthetic transactions are specific "alert patterns" and anomalous subg
 
 ## Implementation details
 - we will train the model on a simulator. Only the testing will be performed on an actual quantum computer to reduce costs
-
-## TODO
-- understand the concept behind the bitcoin dataset
-- explain the economic reasons behind the idea of looking for loops and complex structures (expecially in the bitcoin dataset which is mapped differently)
-- decide the appropiate number of qubits

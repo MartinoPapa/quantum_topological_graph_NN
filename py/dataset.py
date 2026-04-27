@@ -1,4 +1,3 @@
-# dataset.py
 import numpy as np
 import networkx as nx
 import pandas as pd
@@ -6,6 +5,11 @@ import torch
 import os
 import pickle
 from config import *
+
+DATASET_PAYSIM = 0
+DATASET_ELLIPTIC = 1
+DATASET_AMLSIM = 2
+DATASET_ETHEREUM = 3
 
 class BaseGraphDataset:
     def __init__(self):
@@ -15,10 +19,10 @@ class BaseGraphDataset:
         self.G_global = nx.DiGraph()
 
     def finalize_and_sample(self):
-        print(f"Grafo Globale: {self.G_global.number_of_nodes()} nodi, {self.G_global.number_of_edges()} archi.")
-        print(f"Campionamento (Random Walk) di {TOTAL_GRAPHS} sottografi (Target Fraud: {int(TOTAL_GRAPHS * FRAUD_RATIO)})...")
+        print(f"Global Graph: {self.G_global.number_of_nodes()} nodes, {self.G_global.number_of_edges()} edges.")
+        print(f"Sampling (Random Walk) {TOTAL_GRAPHS} subgraphs (Target Fraud: {int(TOTAL_GRAPHS * FRAUD_RATIO)})...")
         
-        # Rimuovi nodi isolati o non etichettati
+        # Remove isolated or unlabelled nodes
         nodes_to_remove = [n for n, d in self.G_global.nodes(data=True) if d.get('isFraud', -1) == -1 and self.G_global.degree(n) == 0]
         self.G_global.remove_nodes_from(nodes_to_remove)
         
@@ -29,11 +33,11 @@ class BaseGraphDataset:
         normal_nodes = [n for n, d in self.G_global.nodes(data=True) if d.get('isFraud') == 0]
         
         if not fraud_nodes:
-            print("ATTENZIONE: Nessun nodo fraudolento trovato nel grafo globale!")
+            print("WARNING: No fraudulent nodes found in the global graph!")
             
         degrees = dict(self.G_global.degree())
         
-        # Ordina per grado per dare priorità agli hub (high-risk clusters)
+        # Sort by degree to prioritize hubs (high-risk clusters)
         normal_nodes.sort(key=lambda n: degrees.get(n, 0), reverse=True)
         np.random.shuffle(fraud_nodes)
         
@@ -43,7 +47,7 @@ class BaseGraphDataset:
         G_undirected = self.G_global.to_undirected(as_view=True)
         global_edge_count = self.G_global.number_of_edges()
         
-        # --- Estrazione Sottografi Fraudolenti ---
+        # --- Extraction of Fraudulent Subgraphs ---
         count_fraud = 0; fraud_idx = 0
         while count_fraud < target_fraud_count and fraud_idx < len(fraud_nodes):
             subG = self._biased_random_walk(fraud_nodes[fraud_idx], G_undirected, degrees)
@@ -53,7 +57,7 @@ class BaseGraphDataset:
                 self.labels.append(1)
                 count_fraud += 1
 
-        # --- Estrazione Sottografi Normali ---
+        # --- Extraction of Normal Subgraphs ---
         count_normal = 0; norm_idx = 0
         while count_normal < target_normal_count and norm_idx < len(normal_nodes):
             subG = self._biased_random_walk(normal_nodes[norm_idx], G_undirected, degrees)
@@ -67,13 +71,13 @@ class BaseGraphDataset:
 
     def _biased_random_walk(self, start_node, G_view, degrees):
         """
-        Implementa il Random Walk per preservare frequent transactions (pesi) 
-        e high-degree nodes (gradi), come richiesto dal paper.
+        Implements Random Walk to preserve frequent transactions (weights) 
+        and high-degree nodes (degrees), as required by the paper.
         """
         sampled_nodes = {start_node}
         current_node = start_node
         
-        # Preveniamo loop infiniti se il walker rimane bloccato in un vicolo cieco
+        # Prevent infinite loops if the walker gets stuck in a dead end
         max_steps = self.num_nodes * 10 
         steps = 0
         
@@ -81,29 +85,29 @@ class BaseGraphDataset:
             neighbors = list(G_view.neighbors(current_node))
             
             if not neighbors:
-                # Vicolo cieco: Teletrasporto a un nodo già campionato a caso
+                # Dead end: Teleport to an already sampled node randomly
                 current_node = list(sampled_nodes)[np.random.randint(len(sampled_nodes))]
                 steps += 1
                 continue
                 
-            # Calcolo delle probabilità di transizione biasate
+            # Calculation of biased transition probabilities
             weights = []
             for n in neighbors:
                 edge_data = G_view.get_edge_data(current_node, n, default={})
                 w = edge_data.get('weight', 1.0)  # Frequent transactions
                 d = degrees.get(n, 1)             # High-degree nodes (community structure)
                 
-                # Moltiplichiamo peso e grado per favorire transazioni pesanti verso hub
+                # Multiply weight and degree to favor heavy transactions towards hubs
                 weights.append(w * d) 
             
-            # Normalizzazione softmax-style semplice per ottenere probabilità [0, 1]
+            # Simple softmax-style normalization to obtain [0, 1] probabilities
             weights = np.array(weights)
             if weights.sum() == 0:
                 probs = np.ones(len(neighbors)) / len(neighbors)
             else:
                 probs = weights / weights.sum()
             
-            # Salto al prossimo nodo
+            # Jump to the next node
             next_node = np.random.choice(neighbors, p=probs)
             sampled_nodes.add(next_node)
             current_node = next_node
@@ -149,7 +153,7 @@ class BaseGraphDataset:
                 deg = in_deg.get(node, 0) + out_deg.get(node, 0)
                 adj[i, i] = deg / total_weight
 
-        feature_vec = adj.flatten() 
+        feature_vec = adj.flatten()
         target_dim = 2**TOTAL_QUBITS 
         if len(feature_vec) < target_dim:
             feature_vec = np.pad(feature_vec, (0, target_dim - len(feature_vec)))
@@ -165,13 +169,13 @@ class BaseGraphDataset:
 class PaySimDataset(BaseGraphDataset):
     def __init__(self, csv_file, pool_file="pool_nodes.pkl"):
         super().__init__()
-        print("Caricamento PaySim Dataset...")
+        print("Loading PaySim Dataset...")
         
         if os.path.exists(pool_file):
             with open(pool_file, "rb") as f:
                 self.allowed_nodes = pickle.load(f)
         else:
-            raise FileNotFoundError(f"Esegui prima lo script per generare {pool_file}")
+            raise FileNotFoundError(f"Run the script to generate {pool_file} first")
 
         chunk_iter = pd.read_csv(csv_file, chunksize=500000, usecols=['amount', 'nameOrig', 'nameDest', 'isFraud'])
         for chunk in chunk_iter:
@@ -198,7 +202,7 @@ class PaySimDataset(BaseGraphDataset):
 class EllipticDataset(BaseGraphDataset):
     def __init__(self, edges_file, classes_file):
         super().__init__()
-        print("Caricamento Elliptic Bitcoin Dataset...")
+        print("Loading Elliptic Bitcoin Dataset...")
         
         df_classes = pd.read_csv(classes_file)
         df_classes = df_classes[df_classes['class'] != 'unknown']
@@ -219,9 +223,9 @@ class EllipticDataset(BaseGraphDataset):
 class AMLSimDataset(BaseGraphDataset):
     def __init__(self, tx_file):
         super().__init__()
-        print("Caricamento IBM AMLSim Dataset...")
+        print("Loading IBM AMLSim Dataset...")
         
-        # AMLSim usa solitamente colonne come: sender_id, receiver_id, amount, is_sar (Suspicious Activity Report)
+        # AMLSim typically uses columns like: sender_id, receiver_id, amount, is_sar (Suspicious Activity Report)
         df = pd.read_csv(tx_file, usecols=['sender_id', 'receiver_id', 'amount', 'is_sar'])
         df['amount'] = np.log1p(df['amount'])
         
@@ -243,18 +247,21 @@ class AMLSimDataset(BaseGraphDataset):
 class EthereumPhishingDataset(BaseGraphDataset):
     def __init__(self, edges_file, nodes_file):
         super().__init__()
-        print("Caricamento Ethereum Phishing Dataset...")
+        print("Loading Ethereum Phishing Dataset...")
         
-        # File dei nodi solitamente contiene 'address' e 'is_phishing' (1/0)
+        # Nodes file typically contains 'address' and 'is_phishing' (1/0)
         df_nodes = pd.read_csv(nodes_file)
         label_dict = dict(zip(df_nodes['address'], df_nodes['is_phishing']))
         
-        # File degli archi solitamente contiene 'from_address', 'to_address', 'value'
+        # Edges file typically contains 'from_address', 'to_address', 'value'
         df_edges = pd.read_csv(edges_file)
         
         for _, row in df_edges.iterrows():
             u, v, w = row['from_address'], row['to_address'], row.get('value', 1.0)
-            self.G_global.add_edge(u, v, weight=w)
+            if self.G_global.has_edge(u, v):
+                self.G_global[u][v]['weight'] += w
+            else:
+                self.G_global.add_edge(u, v, weight=w)
             
         for node in self.G_global.nodes():
             self.G_global.nodes[node]['isFraud'] = label_dict.get(node, 0)
@@ -262,14 +269,13 @@ class EthereumPhishingDataset(BaseGraphDataset):
         self.finalize_and_sample()
 
 def get_dataset(dataset_name, **kwargs):
-    dataset_name = dataset_name.lower()
-    if dataset_name == "paysim":
+    if dataset_name == DATASET_PAYSIM:
         return PaySimDataset(kwargs['csv_file'], kwargs.get('pool_file', "pool_nodes.pkl"))
-    elif dataset_name == "elliptic":
+    elif dataset_name == DATASET_ELLIPTIC:
         return EllipticDataset(kwargs['edges_file'], kwargs['classes_file'])
-    elif dataset_name == "amlsim":
+    elif dataset_name == DATASET_AMLSIM:
         return AMLSimDataset(kwargs['tx_file'])
-    elif dataset_name == "ethereum":
+    elif dataset_name == DATASET_ETHEREUM:
         return EthereumPhishingDataset(kwargs['edges_file'], kwargs['nodes_file'])
     else:
-        raise ValueError(f"Dataset '{dataset_name}' non supportato. Scegli tra: paysim, elliptic, amlsim, ethereum.")
+        raise ValueError(f"Dataset '{dataset_name}' not supported. Choose from: {DATASET_PAYSIM}, {DATASET_ELLIPTIC}, {DATASET_AMLSIM}, {DATASET_ETHEREUM}.")

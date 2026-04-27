@@ -1,2 +1,5 @@
 py/save_account.py
 datasets/
+.venv
+ai.md
+.agents/

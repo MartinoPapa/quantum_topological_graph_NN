@@ -1,0 +1,28 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+\section{Context and Importance}
+Fraud detection has become a foundational pillar of modern economic security. The rapid digitization of financial services has streamlined global commerce but has also opened new vectors for illicit activities. Undetected financial fraud leads to massive economic losses for individuals and institutions, undermines public trust in the financial system, and frequently serves to finance broader criminal organizations, including money laundering and terrorism. Consequently, developing robust mechanisms to identify and halt fraudulent transactions is critically important to preserving both market integrity and social stability.
+
+\section{The Growing Challenge}
+Detecting fraud is becoming increasingly difficult. The sheer volume and velocity of digital transactions make manual oversight impossible and heavily strain classical machine learning architectures. Furthermore, the rise of decentralized finance (DeFi), Web3, and cryptocurrencies has introduced a paradigm of pseudo-anonymity that complicates traditional tracing. 
+
+Criminals have adapted to this landscape by employing highly sophisticated obfuscation tactics. Instead of acting alone, they form complex ``fraud rings'' to distribute illicit funds across vast networks of temporary accounts. To further break the traceable link between sender and receiver, illicit actors frequently use cyclic transfers and cryptocurrency \textbf{mixers}---services that pool together funds from multiple users, mix them, and redistribute them at random intervals and amounts. These advanced tactics create dense, highly camouflaged transaction topologies that easily evade threshold-based rules and simple heuristic detection methods.
+
+\section{Proposed Solution: QTGNN}
+Traditional Graph Neural Networks (GNNs) have shown promise in fraud detection by utilizing local message-passing mechanisms. However, they often struggle to capture the long-range dependencies and higher-order topological structures that characterize modern, sophisticated fraud rings. 
+
+To address these limitations, this thesis proposes the use of a Quantum Topological Graph Neural Network (QTGNN). By combining the principles of Quantum Computing, Graph Theory, and Topological Data Analysis (TDA), the QTGNN offers a remarkably robust solution. It leverages quantum embeddings to capture multiple complex transaction pathways simultaneously and employs topological invariants (such as persistent homology) to identify the underlying structural ``shape'' of the fraud network, isolating it from deliberate noise and obfuscation.
+
+\section{Thesis Objectives}
+The primary objective of this thesis is to develop a comprehensive Python implementation of the QTGNN specifically tailored for fraud detection. 
+
+To evaluate the model's performance against varying structural challenges, the implementation will be tested on several distinct datasets:
+\begin{itemize}
+    \item \textbf{The Elliptic Bitcoin Dataset}: A real-world dataset mapping Bitcoin transaction flows that contains rich topological structures obfuscated by illicit actors.
+    \item \textbf{Ethereum Phishing Transaction Networks}: A real-world dataset where accounts and transactions are modeled as nodes and edges to perform phishing account classification.
+    \item \textbf{IBM AMLSim}: A dataset containing synthetic everyday transactions embedded with specific alert patterns and anomalies that mimic actual money laundering typologies, such as smurfing.
+    \item \textbf{PaySim}: A synthetic financial dataset for evaluating broader classification capabilities.
+\end{itemize}
+
+Given the current limitations of quantum hardware, this research adopts a hybrid testing strategy. The QTGNN model will be trained heavily using a quantum simulator, while the final evaluation and testing will be performed on an actual quantum computer to effectively reduce computational costs and validate its viability on Noisy Intermediate-Scale Quantum (NISQ) devices.
