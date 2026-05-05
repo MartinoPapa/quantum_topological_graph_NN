@@ -1,19 +1,21 @@
-# Plan for Abstract and Introduction
+# Plan
 
-I will structure the abstract and introduction sections based on the requirements and the details provided in `readme.md`.
+1. **Fix spelling and grammatical errors in `tex/sections/abstract.tex`**:
+   The sentence provided contains a few typographical and phrasing issues. I will correct them as follows:
+   - "Laveraging" -> "Leveraging"
+   - "decisions taken by the model" -> "decisions made by the model"
+   - "extreamly" -> "extremely"
+   - "in regard to use deep learning model" -> "in regard to using deep learning models"
+   - "compleatly" -> "completely"
+   - "In a legal process the model needs to be able to explain the decisions taken by it." -> "In a legal setting, the model must be able to explain its decisions."
 
-1. **Creating the Abstract (`tex/sections/abstract.tex`)**:
-   - I will create a new file for the abstract using `\chapter*{Abstract}`.
-   - **Content**: 
-     - Briefly introduce the overarching challenge of fraud detection.
-     - State the primary goal of the thesis: to develop a detailed Python implementation of a Quantum Topological Graph Neural Network (QTGNN).
-     - Very briefly mention the datasets used for evaluation to test the model across various structural challenges: the Elliptic Bitcoin Dataset, Ethereum Phishing Transaction Networks, IBM AMLSim, and PaySim. 
-   - I will update `tex/thesis.tex` to include `\include{sections/abstract}` just before the `\tableofcontents`.
+   The revised sentence will be:
+   > "Leveraging these features we will also be able to explain the decisions made by the model. This is extremely important since, in regard to using deep learning models in the real world, we must avoid treating them as completely black boxes. In a legal setting, the model must be able to explain its decisions \cite{goodman2017european}."
 
-2. **Writing the Introduction (`tex/sections/introduction.tex`)**:
-   - **Context & Importance**: I will start by explaining the critical importance of fraud detection (preventing massive economic losses, disrupting illicit organizations).
-   - **The Growing Challenge**: I will address why it's becoming more difficult to detect fraud. I'll highlight the sheer volume of digital transactions and the rise of cryptocurrencies/Web3 which offer pseudo-anonymity. I will detail increasingly sophisticated tactics used by criminals, such as complex fraud rings, cyclic transfers, and **mixers** (providing a brief explanation that mixers are services that pool together and randomly redistribute cryptocurrency to break the traceable link between sender and receiver).
-   - **Proposed Solution (QTGNN)**: I will briefly introduce how traditional heuristic methods fall short and why the QTGNN (combining Quantum Computing, Graph Theory, and Topological Data Analysis) offers a robust solution capable of capturing these hidden patterns.
-   - **Thesis Structure/Objectives**: I will conclude the introduction by outlining the thesis objectives: developing the Python implementation, training it on a quantum simulator, testing on an actual quantum computer to reduce costs, and evaluating its performance across the aforementioned real-world and synthetic datasets.
+2. **Add a relevant citation to `tex/refs.bib`**:
+   I will add a BibTeX entry for a foundational paper that discusses the legal necessity of explainability in AI models, specifically regarding the "right to explanation":
+   - **Goodman, B., & Flaxman, S. (2017).** *European Union regulations on algorithmic decision-making and a "right to explanation".* AI Magazine.
+   - This paper strongly supports the claim that in real-world and legal scenarios, models cannot operate as complete black boxes.
 
-Please approve this revised plan so I can proceed with writing the LaTeX code.
+3. **Apply the citation**:
+   I will append `\cite{goodman2017european}` to the end of the corrected sentence in the abstract.

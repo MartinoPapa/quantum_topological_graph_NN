@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  27 APR 2026 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  5 MAY 2026 11:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -927,7 +927,11 @@ File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )) [2]
 \openout2 = `sections/abstract.aux'.
 
- (./sections/abstract.tex)
+ (./sections/abstract.tex
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/17.28'.
+(microtype)             Ignoring protrusion settings for this character.
+)
 LaTeX Font Info:    Trying to load font information for U+zeur on input line 99.
  (c:/texlive/2022/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
@@ -953,8 +957,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [1
-
-
 
 
 
@@ -1022,12 +1024,12 @@ chapter 2.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 44.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 50.
  (c:/texlive/2022/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 44.
+(Font)              scaled to size 10.20007pt on input line 50.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1036,21 +1038,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 206BC5AB1868D5320CD5587E0EDBFA6A;681.
+(rerunfilecheck)             Checksum: 39EA7879EBF33EC24E1AC388E248BEED;793.
  ) 
 Here is how much of TeX's memory you used:
- 28274 strings out of 476093
- 563787 string characters out of 5795582
+ 28352 strings out of 476093
+ 564709 string characters out of 5795582
  1863787 words of memory out of 5000000
- 47769 multiletter control sequences out of 15000+600000
- 579960 words of font info for 358 fonts, out of 8000000 for 9000
+ 47783 multiletter control sequences out of 15000+600000
+ 589841 words of font info for 405 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,133p,10644b,1018s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,133p,10644b,1022s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (19 pages, 208895 bytes).
+Output written on thesis.pdf (19 pages, 212365 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
- 75342 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 85590 words of extra memory for PDF output out of 89155 (max. 10000000)
 

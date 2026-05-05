@@ -1360,6 +1360,8 @@ INPUT sections/abstract.tex
 INPUT ./sections/abstract.tex
 INPUT sections/abstract.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplrc9d.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
 INPUT c:/texlive/2022/texmf-dist/tex/latex/eulervm/uzeur.fd
@@ -1402,6 +1404,10 @@ INPUT c:/texlive/2022/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/vf/adobe/palatino/pplrc9d.vf
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT ./thesis.toc
 INPUT thesis.toc
 INPUT thesis.toc
