@@ -6,5 +6,6 @@
 
 
 - sistemare le prime tre sezioni per evitare ripetizioni
-- sistemare abstract
 - aggiungere il fatto che si usa explainabbility
+
+combinare introduzione e fraud ring theory in un unica sezione

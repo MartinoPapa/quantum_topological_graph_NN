@@ -2,17 +2,46 @@
 \label{ch:introduction}
 
 \section{Context and Importance}
-Fraud detection has become a foundational pillar of modern economic security. The rapid digitization of financial services has streamlined global commerce but has also opened new vectors for illicit activities. Undetected financial fraud leads to massive economic losses for individuals and institutions, undermines public trust in the financial system, and frequently serves to finance broader criminal organizations, including money laundering and terrorism. Consequently, developing robust mechanisms to identify and halt fraudulent transactions is critically important to preserving both market integrity and social stability.
+Fraud detection has become a foundational pillar of modern economic security. The rapid digitization of financial services has opened new possibilities for fraudulent activities. Undetected financial frauds leads to massive economic losses for individuals and institutions, undermine public trust in the financial system and frequently serves to finance criminal organizations (e.g. money laundering). Consequently, developing robust mechanisms to identify and stop fraudulent transactions is critically important to preserving both market integrity and social stability.
 
 \section{The Growing Challenge}
 Detecting fraud is becoming increasingly difficult. The sheer volume and velocity of digital transactions make manual oversight impossible and heavily strain classical machine learning architectures. Furthermore, the rise of decentralized finance (DeFi), Web3, and cryptocurrencies has introduced a paradigm of pseudo-anonymity that complicates traditional tracing. 
+On top of that, the sophistication of the techniques used by scammers is constantly evolving.
 
-Criminals have adapted to this landscape by employing highly sophisticated obfuscation tactics. Instead of acting alone, they form complex ``fraud rings'' to distribute illicit funds across vast networks of temporary accounts. To further break the traceable link between sender and receiver, illicit actors frequently use cyclic transfers and cryptocurrency \textbf{mixers}---services that pool together funds from multiple users, mix them, and redistribute them at random intervals and amounts. These advanced tactics create dense, highly camouflaged transaction topologies that easily evade threshold-based rules and simple heuristic detection methods.
+\subsection{The Limitations of the Lonely Scammer}
+Individual scammers typically rely on simple and intuitive techniques to introduce illicit funds into the legitimate economy. One of the most prevalent methods is known as ``smurfing''. In simple terms, smurfing involves breaking down a large sum of illicit money into many smaller, inconspicuous chunks to deposit them without raising suspicion. 
+
+More formally, individual scammers rely on smurfing to avoid Anti-Money Laundering (AML) detection mechanisms, which usually flag transactions above a specific threshold $\tilde{x}$. By splitting their initial illicit funds $x$ into smaller transactions $x_n$, such that each transaction satisfies $x_n \leq \tilde{x}$, they minimize the risk of detection \cite{contreras2026strategic}. The mathematical expectation of profit $\pi_s$ for a scammer engaging in smurfing can be defined as:
+\begin{equation}
+    \pi_s = x(1-\nu)
+\end{equation}
+where $x$ represents the total initial illicit funds, and $\nu \in (0,1)$ is the friction cost or commission proportion associated with the smurfing process (e.g., the fee paid to mules). 
+
+While smurfing is effective for small amounts, its scalability is severely limited. When attempting to launder much larger volumes of funds, an individual scammer operating from a single account faces a significantly higher probability of detection $(1-p)$, where $p$ is the probability of successfully avoiding detection. If caught, the scammer is subjected to a severe monetary penalty $T$, which includes both the total confiscation of the funds and associated judicial fines \cite{contreras2026strategic}. Therefore, operating as a ``lonely scammer'' becomes mathematically and practically unviable for large-scale operations due to the massive expected cost of $(1-p)T$.
+
+\subsection{Fraud Rings}
+In regard to overcome those issues, criminals have improved their techniques by employing highly sophisticated obfuscation tactics. Instead of acting alone, they form complex ``fraud rings'' to distribute illicit funds across vast networks of temporary accounts. To further break the traceable link between sender and receiver, illicit actors frequently use cyclic transfers and cryptocurrency \textbf{mixers} services that pool together funds from multiple users, mix them, and redistribute them at random intervals and amounts. These advanced tactics create dense, highly camouflaged transaction topologies that easily evade threshold-based rules and simple heuristic detection methods.
+
+To achive their goal they utilize a strategy of transaction layering, often characterized by a topological depth $L$, and network diversification to obscure the money trail \cite{contreras2026strategic, li2025scamsweeper}.
+By spreading the funds through a complex topology, the fraud ring successfully increases its non-detection probability $p_L$, which now depends explicitly on the layering depth $L$. The expected profit of a fraud ring utilizing $L$ layers can be mathematically expressed as:
+\begin{equation}
+    E[\pi_L] = p_L x - (1-p_L)T - c(L)
+\end{equation}
+where $E[\pi_L]$ is the expected profit, $p_L$ is the enhanced probability of evading detection when $L$ layers are used, $x$ is the total illicit funds, $T$ is the total penalty if caught, and $c(L)$ represents the monotonic cost function associated with establishing and maintaining the $L$ transaction layers. Because the fraud ring dramatically increases the probability of evading detection ($p_L \to 1$ as $L$ increases), the expected payoff remains highly profitable even when factoring in the complex layering costs $c(L)$ \cite{contreras2026strategic}. 
 
 \section{Proposed Solution: QTGNN}
 Traditional Graph Neural Networks (GNNs) have shown promise in fraud detection by utilizing local message-passing mechanisms. However, they often struggle to capture the long-range dependencies and higher-order topological structures that characterize modern, sophisticated fraud rings. 
 
-To address these limitations, this thesis proposes the use of a Quantum Topological Graph Neural Network (QTGNN). By combining the principles of Quantum Computing, Graph Theory, and Topological Data Analysis (TDA), the QTGNN offers a remarkably robust solution. It leverages quantum embeddings to capture multiple complex transaction pathways simultaneously and employs topological invariants (such as persistent homology) to identify the underlying structural ``shape'' of the fraud network, isolating it from deliberate noise and obfuscation.
+To address these limitations, we propose the use of a Quantum Topological Graph Neural Network (QTGNN). By combining the principles of Quantum Computing, Graph Theory, and Topological Data Analysis (TDA), the QTGNN offers a remarkably robust solution. It leverages quantum embeddings to capture multiple complex transaction pathways simultaneously and employs topological invariants (such as persistent homology) to identify the underlying structural ``shape'' of the fraud network, isolating it from deliberate noise and obfuscation \cite{mainarticle}.
+By doing so we aim to address three fundamental challenges:
+\begin{itemize}
+    \item \textbf{Leveraging quantum embeddings for richer relational representation:} Traditional representations struggle to model the high-dimensional pathways of fraud rings. Quantum embeddings encode this complex relational information by exploiting quantum superposition and entanglement. This allows the model to represent multiple transaction pathways and interdependencies simultaneously, capturing subtle patterns distributed across the network that classical local message-passing GNNs often overlook \cite{mainarticle}.
+    
+    \item \textbf{Incorporating topological invariants for robustness and interpretability:} Topological Data Analysis (TDA) has gained significant attention for its ability to extract invariant features that characterize the global structure of data \cite{monkam2024}. By extracting topological descriptors such as persistent homology, the QTGNN captures global structural features that remain invariant to noise and minor perturbations. This not only makes the representations robust against the spurious connections generated by scammers but also enhances the model's interpretability by identifying the higher-order motifs driving the anomaly detection.
+    
+    \item \textbf{Ensuring scalability and practicality on NISQ devices:} While quantum models offer theoretical advantages, their practical deployment is heavily constrained by the limitations of Noisy Intermediate-Scale Quantum (NISQ) hardware \cite{umeda2019}. The QTGNN framework addresses these bottlenecks through a NISQ-aware design that employs circuit optimization, error mitigation, and hybrid quantum-classical computation strategies. This ensures that the quantum-enhanced graph learning remains feasible, scalable, and fully deployable on real-world financial transaction networks \cite{mainarticle}.
+\end{itemize}
+
 
 \section{Thesis Objectives}
 The primary objective of this thesis is to develop a comprehensive Python implementation of the QTGNN specifically tailored for fraud detection. 
@@ -25,4 +54,5 @@ To evaluate the model's performance against varying structural challenges, the i
     \item \textbf{PaySim}: A synthetic financial dataset for evaluating broader classification capabilities.
 \end{itemize}
 
-Given the current limitations of quantum hardware, this research adopts a hybrid testing strategy. The QTGNN model will be trained heavily using a quantum simulator, while the final evaluation and testing will be performed on an actual quantum computer to effectively reduce computational costs and validate its viability on Noisy Intermediate-Scale Quantum (NISQ) devices.
+Given the current limitations of quantum hardware, this research adopts a hybrid testing strategy. The QTGNN model will be trained mainly using a quantum simulator, while the final evaluation and testing will be performed on an actual quantum computer.
+This allow to significantly reduce computational cost whilst validate the model's viability on Noisy Intermediate-Scale Quantum (NISQ) devices.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  5 MAY 2026 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  5 JUN 2026 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -771,7 +771,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 LaTeX Font Info:    Trying to load font information for T1+pplj on input line 85.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
-) (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux) (./sections/fraud_ring_theory.aux))
+) (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
@@ -999,26 +999,15 @@ chapter 1.
 
 
 
-])
+]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [10] [11]
-\openout2 = `sections/fraud_ring_theory.aux'.
-
- (./sections/fraud_ring_theory.tex [12
-
-
-
-
-
-]
-chapter 2.
-[13] [14]) [15] (./thesis.bbl (./thesis.brf)
+ [10] [11]) [12] [13] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write6
 \openout6 = `thesis.brf'.
 
- [16
+ [14
 
 
 
@@ -1034,25 +1023,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [17] (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux) (./sections/fraud_ring_theory.aux))
+) [15] (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 39EA7879EBF33EC24E1AC388E248BEED;793.
+(rerunfilecheck)             Checksum: 4C2134F4D1681D364487F9DBFA01C873;670.
  ) 
 Here is how much of TeX's memory you used:
- 28352 strings out of 476093
- 564709 string characters out of 5795582
- 1863787 words of memory out of 5000000
- 47783 multiletter control sequences out of 15000+600000
- 589841 words of font info for 405 fonts, out of 8000000 for 9000
+ 28306 strings out of 476093
+ 563348 string characters out of 5795582
+ 1862787 words of memory out of 5000000
+ 47758 multiletter control sequences out of 15000+600000
+ 589279 words of font info for 397 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,133p,10644b,1022s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,135p,10644b,1043s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (19 pages, 212365 bytes).
+Output written on thesis.pdf (17 pages, 208395 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
- 215 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 85590 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 85574 words of extra memory for PDF output out of 89155 (max. 10000000)
 
