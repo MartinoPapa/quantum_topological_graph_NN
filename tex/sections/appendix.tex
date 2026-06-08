@@ -1,0 +1,38 @@
+\chapter{A previous implementation of {\texorpdfstring{$S_{\mathrm{normal}}$}{S\_normal}}}\label{firstmethod}
+My first implementation of \(S_\text{normal}\) tourned out to be ineffective; the assumption of using an hypersphere to model normal transactions was too restrictive and the model struggled to generalize to unseen fraud patterns. I mention it here for completeness.
+
+The idea was to compute \(S_\text{normal}\) as the mean of the feature vectors of all the legitimate graphs in the current batch. This technique is inspired by the paper ``\textit{Deep One-Class Classification}'' \cite{pmlrRuff18}. This changes the network the network to map all "normal" data points into a hypersphere of minimum volume surrounding a center \(c\). By doing so the model should learn common factors of variation in normal transactions, making it better at detecting "unknown" types of fraud that fall far from that center.
+
+The new definition of \(S_\text{normal}\) becomes
+\begin{equation}
+    S_\text{normal}^{(0)} = \mu_{i} \doteq \frac{1}{|\mathcal{G}_\text{normal}^{(i)}|}\sum_{G \in \mathcal{G}_\text{normal}^{(i)}} \phi(G)
+\end{equation}
+\begin{equation}
+    S_{normal}^{(i)} = \alpha \cdot S_{normal}^{(i-1)} + (1 - \alpha) \cdot \mu_{i}
+\end{equation}
+where \(\mathcal{G}_\text{normal}^{(i)}\) is the set of legitimate graphs in the \(i\)-th batch and \(\alpha \in [0,1]\) is a hyperparameter. If I would have followd the implementation described in the paper ``\textit{Deep One-Class Classification}'' \cite{pmlrRuff18} \(S_\text{normal}\) would have been computed as the mean of the normal sample in the batch; our implementation compute it as a moving average over batches as this idea is proven to improve robustness \cite{momentum}.
+
+The anomaly detection is still formulated as an hypothesis test
+\begin{equation}
+    \mathcal{H}_{0}: ||\phi(G) - S_\text{normal}^{(i)}||^2 \le R^2 \quad \text{(Normal)}
+\end{equation}
+\begin{equation}
+    \mathcal{H}_{1}: ||\phi(G) - S_\text{normal}^{(i)}||^2 > R^2 \quad \text{(Anomaly)}
+\end{equation}
+The loss function is defined as
+\begin{equation}
+    \mathcal{L} = \mathcal{L}_{sup}(\phi(G), y; \Theta) + \lambda_{1} \mathcal{L}_\text{unsup}(\phi(G), \Theta) + \lambda_{2}\mathcal{R}(\Theta)
+\end{equation}
+where
+\begin{equation}
+    \mathcal{L}_{sup}(\phi(G), y; \Theta) = - \left[ y \log(\hat{y}) + (1 - y) \log(1 - \hat{y}) \right]
+\end{equation}
+where \(\hat{y} = \sigma(W^\top \phi(G) + b)\) is the predicted probability of being an anomaly, with \(\sigma\) being the sigmoid function, \(W\) and \(b\) are learnable parameters, and \(y \in \{0, 1\}\) is the ground truth label (0 for normal, 1 for anomaly).
+\begin{equation}
+    \mathcal{L}_\text{unsup}(\phi(G), \Theta) = ||\phi(G) - S_\text{normal}^{(i)}||^2
+\end{equation}
+\begin{equation}
+    \mathcal{R}(\Theta)=\sum_{l}||\Theta^{(l)}||_{2}^{2}
+\end{equation}
+\(\lambda_1, \lambda_2\) are hyperparameters that control the relative importance of the unsupervised, and regularization terms respectively.
+\(\Theta\) are adaptive parameters optimized via quantum gradient flows

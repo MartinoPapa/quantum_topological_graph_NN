@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  5 JUN 2026 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  8 JUN 2026 12:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,9 +381,18 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip76
 \backup@length=\skip77
 \ar@cellbox=\box65
-)) (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrhack.sty
-Package: scrhack 2022/10/12 v3.38 KOMA-Script package (hacking other packages)
- (c:/texlive/2022/texmf-dist/tex/latex/xpatch/xpatch.sty (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+)) (c:/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks34
+\thm@bodyfont=\toks35
+\thm@headfont=\toks36
+\thm@notefont=\toks37
+\thm@headpunct=\toks38
+\thm@preskip=\skip78
+\thm@postskip=\skip79
+\thm@headsep=\skip80
+\dth@everypar=\toks39
+) (c:/texlive/2022/texmf-dist/tex/latex/xpatch/xpatch.sty (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2022-12-17 L3 programming layer (loader) 
  (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
@@ -394,6 +403,9 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
  (c:/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2022-12-17 L3 Experimental document command parser
 ))
+Class scrbook Info: amsthm's \deferred@thm@head patched.
+ (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrhack.sty
+Package: scrhack 2022/10/12 v3.38 KOMA-Script package (hacking other packages)
 Package scrhack Info: loading listings hack on input line 185.
  (c:/texlive/2022/texmf-dist/tex/latex/koma-script/listings.hak
 File: listings.hak 2022/10/12 v3.38 KOMA-Script scrhack part (hacking package listings)
@@ -415,7 +427,7 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 \TX@target=\dimen174
 \TX@delta=\dimen175
 \TX@cols=\count319
-\TX@ftn=\toks34
+\TX@ftn=\toks40
 ) (c:/texlive/2022/texmf-dist/tex/latex/mparhack/mparhack.sty
 Package: mparhack 2021-05-02 v1.5 (T. Sgouros and S. Ulrich)
 ) (c:/texlive/2022/texmf-dist/tex/latex/relsize/relsize.sty
@@ -430,7 +442,7 @@ Package: suffix 2006/07/15 1.5a Variant command support
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
-\AC@clearlist=\toks35
+\AC@clearlist=\toks41
 )
 \c@dummy=\count322
  (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -557,7 +569,7 @@ Package hyperref Info: Driver: hpdftex.
 File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 \Fld@listcount=\count331
 \c@bookmark@seq@number=\count332
-\Hy@SectionHShift=\skip78
+\Hy@SectionHShift=\skip81
 ) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
@@ -602,7 +614,7 @@ Package: beramono 2004/01/31 (WaS)
 Package: eulervm 2005/01/11 v4.0 (WaS)
 ) (c:/texlive/2022/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
-\MT@toks=\toks36
+\MT@toks=\toks42
 \MT@tempbox=\box67
 \MT@count=\count333
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
@@ -616,7 +628,7 @@ LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
 File: microtype-pdftex.def 2022/06/23 v3.0f Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 900.
 LaTeX Info: Redefining \lslig on input line 900.
-\MT@outer@space=\skip79
+\MT@outer@space=\skip82
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (c:/texlive/2022/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -663,12 +675,12 @@ Package: textcase 2022/07/10 v1.03 Text only upper/lower case changing (DPC)
 Package textcase Info: Defining Legacy names on input line 20.
 ) (c:/texlive/2022/texmf-dist/tex/generic/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks37
-\SOUL@lasttoken=\toks38
-\SOUL@cmds=\toks39
-\SOUL@buffer=\toks40
-\SOUL@token=\toks41
-\SOUL@spaceskip=\skip80
+\SOUL@word=\toks43
+\SOUL@lasttoken=\toks44
+\SOUL@cmds=\toks45
+\SOUL@buffer=\toks46
+\SOUL@token=\toks47
+\SOUL@spaceskip=\skip83
 \SOUL@ttwidth=\dimen196
 \SOUL@uldp=\dimen197
 \SOUL@ulht=\dimen198
@@ -688,66 +700,66 @@ Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
 (c:/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box68
-\beforetitleunit=\skip81
-\aftertitleunit=\skip82
+\beforetitleunit=\skip84
+\aftertitleunit=\skip85
 \ttl@plus=\dimen199
 \ttl@minus=\dimen256
-\ttl@toksa=\toks42
+\ttl@toksa=\toks48
 \titlewidth=\dimen257
 \titlewidthlast=\dimen258
 \titlewidthfirst=\dimen259
 ) (c:/texlive/2022/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip83
-\cftbeforetoctitleskip=\skip84
-\cftaftertoctitleskip=\skip85
-\cftbeforepartskip=\skip86
-\cftpartnumwidth=\skip87
-\cftpartindent=\skip88
-\cftbeforechapskip=\skip89
-\cftchapindent=\skip90
-\cftchapnumwidth=\skip91
-\cftbeforesecskip=\skip92
-\cftsecindent=\skip93
-\cftsecnumwidth=\skip94
-\cftbeforesubsecskip=\skip95
-\cftsubsecindent=\skip96
-\cftsubsecnumwidth=\skip97
-\cftbeforesubsubsecskip=\skip98
-\cftsubsubsecindent=\skip99
-\cftsubsubsecnumwidth=\skip100
-\cftbeforeparaskip=\skip101
-\cftparaindent=\skip102
-\cftparanumwidth=\skip103
-\cftbeforesubparaskip=\skip104
-\cftsubparaindent=\skip105
-\cftsubparanumwidth=\skip106
-\cftbeforeloftitleskip=\skip107
-\cftafterloftitleskip=\skip108
-\cftbeforefigskip=\skip109
-\cftfigindent=\skip110
-\cftfignumwidth=\skip111
-\cftbeforelottitleskip=\skip112
-\cftafterlottitleskip=\skip113
-\cftbeforetabskip=\skip114
-\cfttabindent=\skip115
-\cfttabnumwidth=\skip116
-\cftbeforesubfigskip=\skip117
-\cftsubfigindent=\skip118
-\cftsubfignumwidth=\skip119
-\cftbeforesubtabskip=\skip120
-\cftsubtabindent=\skip121
-\cftsubtabnumwidth=\skip122
+\cftparskip=\skip86
+\cftbeforetoctitleskip=\skip87
+\cftaftertoctitleskip=\skip88
+\cftbeforepartskip=\skip89
+\cftpartnumwidth=\skip90
+\cftpartindent=\skip91
+\cftbeforechapskip=\skip92
+\cftchapindent=\skip93
+\cftchapnumwidth=\skip94
+\cftbeforesecskip=\skip95
+\cftsecindent=\skip96
+\cftsecnumwidth=\skip97
+\cftbeforesubsecskip=\skip98
+\cftsubsecindent=\skip99
+\cftsubsecnumwidth=\skip100
+\cftbeforesubsubsecskip=\skip101
+\cftsubsubsecindent=\skip102
+\cftsubsubsecnumwidth=\skip103
+\cftbeforeparaskip=\skip104
+\cftparaindent=\skip105
+\cftparanumwidth=\skip106
+\cftbeforesubparaskip=\skip107
+\cftsubparaindent=\skip108
+\cftsubparanumwidth=\skip109
+\cftbeforeloftitleskip=\skip110
+\cftafterloftitleskip=\skip111
+\cftbeforefigskip=\skip112
+\cftfigindent=\skip113
+\cftfignumwidth=\skip114
+\cftbeforelottitleskip=\skip115
+\cftafterlottitleskip=\skip116
+\cftbeforetabskip=\skip117
+\cfttabindent=\skip118
+\cfttabnumwidth=\skip119
+\cftbeforesubfigskip=\skip120
+\cftsubfigindent=\skip121
+\cftsubfignumwidth=\skip122
+\cftbeforesubtabskip=\skip123
+\cftsubtabindent=\skip124
+\cftsubtabnumwidth=\skip125
 )
-\newnumberwidth=\skip123
-\beforebibskip=\skip124
-\figurelabelwidth=\skip125
-\tablelabelwidth=\skip126
+\newnumberwidth=\skip126
+\beforebibskip=\skip127
+\figurelabelwidth=\skip128
+\tablelabelwidth=\skip129
  (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrtime.sty
 Package: scrtime 2022/10/12 v3.38 KOMA-Script package (time of LaTeX run)
 ))
-\abcd=\skip127
+\abcd=\skip130
  (c:/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -764,46 +776,47 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen265
 \Gm@layouthoffset=\dimen266
 \Gm@layoutvoffset=\dimen267
-\Gm@dimlist=\toks43
+\Gm@dimlist=\toks49
 ) (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+pplj on input line 85.
+\c@definition=\count342
+LaTeX Font Info:    Trying to load font information for T1+pplj on input line 89.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
-) (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux))
+) (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux) (./sections/description.aux) (./sections/appendix.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-Package scrbase Info: activating english \partname on input line 85.
-Package scrbase Info: activating english \chaptername on input line 85.
-Package scrbase Info: activating english \appendixname on input line 85.
-Package scrbase Info: activating english \figurename on input line 85.
-Package scrbase Info: activating english \tablename on input line 85.
-Package scrbase Info: activating english \contentsname on input line 85.
-Package scrbase Info: activating english \listfigurename on input line 85.
-Package scrbase Info: activating english \listtablename on input line 85.
-Package scrbase Info: activating english \bibname on input line 85.
-Package scrbase Info: activating english \indexname on input line 85.
-LaTeX Info: Redefining \dots on input line 85.
-\c@lstlisting=\count342
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+Package scrbase Info: activating english \partname on input line 89.
+Package scrbase Info: activating english \chaptername on input line 89.
+Package scrbase Info: activating english \appendixname on input line 89.
+Package scrbase Info: activating english \figurename on input line 89.
+Package scrbase Info: activating english \tablename on input line 89.
+Package scrbase Info: activating english \contentsname on input line 89.
+Package scrbase Info: activating english \listfigurename on input line 89.
+Package scrbase Info: activating english \listtablename on input line 89.
+Package scrbase Info: activating english \bibname on input line 89.
+Package scrbase Info: activating english \indexname on input line 89.
+LaTeX Info: Redefining \dots on input line 89.
+\c@lstlisting=\count343
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -811,10 +824,10 @@ Package caption Info: End \AtBeginDocument code.
  (c:/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 85.
-Package scrhack Info: undefining \float@addtolists on input line 85.
-Package backref Info: ** backref set up for natbib ** on input line 85.
-Package hyperref Info: Link coloring OFF on input line 85.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 89.
+Package scrhack Info: undefining \float@addtolists on input line 89.
+Package backref Info: ** backref set up for natbib ** on input line 89.
+Package hyperref Info: Link coloring OFF on input line 89.
  (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
@@ -826,43 +839,43 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 85.
+(scrbook)           before \begin{document} on input line 89.
  (c:/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (c:/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count343
+\BKM@id=\count344
 )) (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count344
+\scratchcounter=\count345
 \scratchdimen=\dimen268
 \scratchbox=\box69
-\nofMPsegments=\count345
-\nofMParguments=\count346
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count347
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count348
 \MPscratchDim=\dimen269
-\MPnumerator=\count348
-\makeMPintoPDFobject=\count349
-\everyMPtoPDFconversion=\toks45
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks51
 ) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \microtypecontext on input line 85.
-Package microtype Info: Applying patch `item' on input line 85.
-Package microtype Info: Applying patch `toc' on input line 85.
-Package microtype Info: Applying patch `eqnum' on input line 85.
-Package microtype Info: Applying patch `footnote' on input line 85.
+LaTeX Info: Redefining \microtypecontext on input line 89.
+Package microtype Info: Applying patch `item' on input line 89.
+Package microtype Info: Applying patch `toc' on input line 89.
+Package microtype Info: Applying patch `eqnum' on input line 89.
+Package microtype Info: Applying patch `footnote' on input line 89.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 85.
+LaTeX Info: Redefining \showhyphens on input line 89.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -932,23 +945,23 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 )
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 99.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 103.
  (c:/texlive/2022/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 ) (c:/texlive/2022/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 99.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 103.
  (c:/texlive/2022/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 ) (c:/texlive/2022/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 99.
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 103.
  (c:/texlive/2022/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 99.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 103.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -966,7 +979,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 101.
+Package tocbasic Info: character protrusion at toc deactivated on input line 105.
  (./thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
@@ -979,7 +992,7 @@ Package microtype Info: Character `029' is missing
 
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 102.
+Package tocbasic Info: character protrusion at lof deactivated on input line 106.
  (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
@@ -1003,45 +1016,71 @@ chapter 1.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [10] [11]) [12] [13] (./thesis.bbl (./thesis.brf)
-\tf@brf=\write6
-\openout6 = `thesis.brf'.
+ [10] [11]) [12]
+\openout2 = `sections/description.aux'.
 
- [14
+ (./sections/description.tex
+chapter 2.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 19.
+(c:/texlive/2022/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [13
+
+
+
+
+
+] [14] [15] [16] [17] [18] [19]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/7'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (5.5428pt too wide) in paragraph at lines 193--195
+[] []\T1/pplj/m/sc/12 (-20) p r o b -l e m : t h e d e f -i -n i -t i o n o f $\U/zeur/m/n/12 S[]$[] \T1/pplj/m/n/12 (-20) In the orig-i-nal pa-per a weight
+ []
+
+[20] [21]) [22] [23]
+\openout2 = `sections/appendix.aux'.
+
+ (./sections/appendix.tex [24
+
 
 
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 50.
- (c:/texlive/2022/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 50.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `fvm' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-) [15] (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux))
+chapter A.
+[25]) [26] (./thesis.bbl (./thesis.brf)
+\tf@brf=\write6
+\openout6 = `thesis.brf'.
+
+ [27
+
+
+
+
+]) [28] (./thesis.aux (./sections/titlePage.aux) (./sections/abstract.aux) (./sections/introduction.aux) (./sections/description.aux) (./sections/appendix.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 4C2134F4D1681D364487F9DBFA01C873;670.
+(rerunfilecheck)             Checksum: E48DAFED8E264D5DE1E353CDF4DF0186;1058.
  ) 
 Here is how much of TeX's memory you used:
- 28306 strings out of 476093
- 563348 string characters out of 5795582
- 1862787 words of memory out of 5000000
- 47758 multiletter control sequences out of 15000+600000
- 589279 words of font info for 397 fonts, out of 8000000 for 9000
+ 28769 strings out of 476093
+ 570250 string characters out of 5795582
+ 1866787 words of memory out of 5000000
+ 47935 multiletter control sequences out of 15000+600000
+ 620880 words of font info for 544 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,135p,10644b,1043s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (17 pages, 208395 bytes).
+ 108i,25n,138p,10644b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (30 pages, 315309 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 85574 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 453 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 126070 words of extra memory for PDF output out of 128383 (max. 10000000)
 

@@ -1,11 +1,4 @@
-\begin{thebibliography}{1}
-
-\bibitem{awoyemi2017}
-J.~Awoyemi, A.~Adetunmbi, and S.~Oluwadare.
-\newblock Credit card fraud detection using machine learning techniques: A
-  comparative analysis.
-\newblock {\em International Conference on Computing Networking and
-  Informatics}, 2017.
+\begin{thebibliography}{10}
 
 \bibitem{contreras2026strategic}
 Alfredo Contreras and Edgar~Villa P{\'e}rez.
@@ -19,11 +12,24 @@ Mohammad Doost and Mohammad Manthouri.
   patterns.
 \newblock {\em arXiv preprint arXiv:2512.03696}, 2025.
 
+\bibitem{newHam}
+Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
+\newblock A quantum approximate optimization algorithm.
+\newblock 2014.
+
 \bibitem{goodman2017european}
 Bryce Goodman and Seth Flaxman.
 \newblock European union regulations on algorithmic decision-making and a
   "right to explanation".
 \newblock {\em AI magazine}, 38(3):50--57, 2017.
+
+\bibitem{artmodificheencoding}
+Zhirui Hu, Jinyang Li, Zhenyu Pan, Shanglin Zhou, Lei Yang, Caiwen Ding, Omer
+  Khan, Tong Geng, and Weiwen Jiang.
+\newblock On the design of quantum graph convolutional neural network in the
+  nisq-era and beyond.
+\newblock In {\em 2022 IEEE 40th International Conference on Computer Design
+  (ICCD)}, pages 290--297, 2022.
 
 \bibitem{li2025scamsweeper}
 Xiaoqi Li, Wenkai Li, Zhijie Liu, Meikang Qiu, Zhiquan Liu, Sen Nie, Zongwei
@@ -37,20 +43,36 @@ P.~Monkam, F.~De~Lucia, and M.~Bastian.
 \newblock Topological data analysis in financial networks.
 \newblock {\em Journal of Computational Finance}, 2024.
 
-\bibitem{motie2024}
-S.~Motie and B.~Raahemi.
-\newblock A review on graph neural networks for fraud detection.
-\newblock {\em IEEE Access}, 2024.
+\bibitem{phasedamp}
+María~Laura Olivera-Atencio, Lucas Lamata, and Jesús Casado-Pascual.
+\newblock Impact of amplitude and phase damping noise on quantum reinforcement
+  learning: Challenges and opportunities.
+\newblock 2025.
 
-\bibitem{AMLSim}
-Toyotaro Suzumura and Hiroki Kanezashi.
-\newblock {Anti-Money Laundering Datasets}: {InPlusLab} anti-money laundering
-  datadatasets.
-\newblock \url{http://github.com/IBM/AMLSim/}, 2021.
+\bibitem{artgrafi}
+T.~Pourhabibi, K.-L. Ong, B.~H. Kam, and Y.~L. Boo.
+\newblock Fraud detection: A systematic literature review of graph-based
+  anomaly detection approaches.
+\newblock {\em Decision Support Systems}, 133:113303, 2020.
+
+\bibitem{pmlrRuff18}
+Lukas Ruff, Robert Vandermeulen, Nico Goernitz, Lucas Deecke, Shoaib~Ahmed
+  Siddiqui, Alexander Binder, Emmanuel Muller, and Marius Kloft.
+\newblock Deep one-class classification.
+\newblock In Jennifer Dy and Andreas Krause, editors, {\em Proceedings of the
+  35th International Conference on Machine Learning}, volume~80 of {\em
+  Proceedings of Machine Learning Research}, pages 4393--4402. PMLR, 10-15 Jul
+  2018.
 
 \bibitem{umeda2019}
 E.~Umeda, K.~Kaneko, and M.~Kikuchi.
 \newblock Quantum machine learning for financial data.
 \newblock {\em Quantum Information Processing}, 2019.
+
+\bibitem{momentum}
+Xingbao Zhang, Wei Li, and Yue Zhao.
+\newblock One-class anomaly detection with redundancy reduction and momentum
+  mechanism.
+\newblock pages 1--6, 2022.
 
 \end{thebibliography}
